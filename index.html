@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -11,10 +15,9 @@
     <link rel="stylesheet" href="style.css" />
     <title>House of Gambling</title>
   </head>
-  <script src="index.js"></script>
   <body>
     <div class="wrapper">
-      <header>
+      <header class="wrapper__header-container">
         <div class="header flex-container">
           <div class="header__logo">
             <svg
@@ -97,33 +100,36 @@
             </ul>
           </nav>
           <div class="header__buttons">
+            <div class="header__logo-mobile"></div>
             <div class="header__select-container">
               <!-- <img src="./assets/img/icon-planet.png" alt="" /> -->
               <select class="header__select" name="lang">
-                <option value="1" selected><span>EN</span></option>
+                <option value="1" selected="selected">EN</option>
                 <option value="2">RU</option>
               </select>
             </div>
+            <div class="header__burger-menu-icon"></div>
             <button class="header__button-login">Log in</button>
             <button class="header__button-sign">Sign up</button>
           </div>
-          <div class="header__burger">
-            <ul class="header__nav-burger-list">
-              <li class="menu_point"><a href="../main" class="active">About</a></li>
-              <li class="menu_point"><a href="#">Map</a></li>
-              <li class="menu_point"><a href="#">Zoos</a></li>
-              <li class="menu_point"><a href="../donate">Donate</a></li>
-              <li class="menu_point menu_point_width1"><a href="#">Contact us</a></li>
-              <li class="menu_point menu_point_width2">
-                <a
-                  href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1"
-                  target="_blank"
-                >
-                  Designed by ©
-                </a>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div class="header__burger">
+          <ul class="header__nav-burger-list">
+            <li class="menu_point"><a href="../main" class="active">About</a></li>
+            <li class="menu_point"><a href="#">Map</a></li>
+            <li class="menu_point"><a href="#">Zoos</a></li>
+            <li class="menu_point"><a href="../donate">Donate</a></li>
+            <li class="menu_point menu_point_width1"><a href="#">Contact us</a></li>
+            <li class="menu_point menu_point_width2">
+              <a
+                href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1"
+                target="_blank"
+              >
+                Designed by ©
+              </a>
+            </li>
+          </ul>
+          <div class="header__burger-icon-close"></div>
         </div>
       </header>
 
@@ -314,7 +320,7 @@
                       y2="9.41176"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#478BF9" />
+                      <stop offset="0.5" stop-color="#478BF9" />
                       <stop offset="1" stop-color="#9DADF2" />
                     </linearGradient>
                     <clipPath id="clip0_5883_671">
@@ -405,5 +411,6 @@
         </div>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
