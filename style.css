@@ -31,13 +31,13 @@ a:hover {
 }
 
 .flex-container {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .wrapper {
+  position: relative;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@ a:hover {
   position: absolute;
   top: 86px;
   left: -100%;
-  z-index: 100;
+  z-index: 15;
   width: 100%;
   height: 451px;
   padding: 10px 10px 30px 10px;
@@ -83,7 +83,6 @@ a:hover {
   transition: all 0.6s;
 }
 .wrapper .wrapper__header-container .header__burger .header__nav-burger-list {
-  max-width: 300px;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -109,6 +108,7 @@ a:hover {
   border-radius: 28px;
   background: none;
   color: white;
+  cursor: pointer;
 }
 .wrapper .wrapper__header-container .header__burger button:nth-child(2) {
   background-color: #478bf9;
@@ -125,6 +125,7 @@ a:hover {
   cursor: pointer;
 }
 .wrapper .header {
+  position: relative;
   width: 100%;
   max-width: 1640px;
   height: 96px;
@@ -160,6 +161,12 @@ a:hover {
   -moz-column-gap: 32px;
        column-gap: 32px;
   list-style-type: none;
+}
+@media screen and (max-width: 1000px) {
+  .wrapper .header .header__nav-list {
+    -moz-column-gap: 18px;
+         column-gap: 18px;
+  }
 }
 @media screen and (max-width: 900px) {
   .wrapper .header .header__nav-list {
@@ -213,13 +220,21 @@ a:hover {
     height: 36px;
     padding: 0;
     background: url("/assets/img/icon-planet.png") no-repeat 14px center;
-    background-size: 18.7px 18.7px;
-    background-position-x: 7px;
+    background-size: 20px 20px;
+    background-position: center center;
     color: transparent;
   }
 }
 .wrapper .header .header__buttons .header__button-login {
   width: 87px;
+}
+.wrapper .header .header__buttons .header__button-login:hover {
+  background-color: darkolivegreen;
+  transition: 0.4s all;
+}
+.wrapper .header .header__buttons .header__button-login:active {
+  background-color: rgb(138, 170, 81);
+  transition: 0.4s all;
 }
 @media screen and (max-width: 900px) {
   .wrapper .header .header__buttons .header__button-login {
@@ -229,6 +244,14 @@ a:hover {
 .wrapper .header .header__buttons .header__button-sign {
   width: 97px;
   background-color: #478bf9;
+}
+.wrapper .header .header__buttons .header__button-sign:hover {
+  background-color: darkolivegreen;
+  transition: 0.4s all;
+}
+.wrapper .header .header__buttons .header__button-sign:active {
+  background-color: rgb(138, 170, 81);
+  transition: 0.4s all;
 }
 @media screen and (max-width: 900px) {
   .wrapper .header .header__buttons .header__button-sign {
@@ -283,6 +306,7 @@ a:hover {
   }
 }
 .wrapper .main .main__banner {
+  z-index: 2;
   width: 100%;
   max-width: 669px;
   text-align: left;
@@ -352,6 +376,14 @@ a:hover {
   cursor: pointer;
   white-space: nowrap;
 }
+.wrapper .main .main__banner-button:hover {
+  background-color: rgb(45, 59, 20);
+  transition: 0.4s all;
+}
+.wrapper .main .main__banner-button:active {
+  background-color: rgb(138, 170, 81);
+  transition: 0.4s all;
+}
 @media screen and (max-width: 1600px) {
   .wrapper .main .main__banner-button {
     max-width: 300px;
@@ -370,6 +402,7 @@ a:hover {
 }
 .wrapper .main .main__vertical-line {
   position: relative;
+  z-index: 2;
   display: flex;
   width: 100%;
   max-width: 334px;
@@ -377,22 +410,30 @@ a:hover {
 }
 @media screen and (max-width: 1150px) {
   .wrapper .main .main__vertical-line {
-    max-width: 180px;
+    max-width: 230px;
   }
 }
 @media screen and (max-width: 900px) {
   .wrapper .main .main__vertical-line {
-    max-width: 165px;
+    display: none;
+    max-width: 180px;
     max-height: 240px;
     rotate: 90deg;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
   }
 }
 .wrapper .main .main__vertical-line img {
   max-width: 100%;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1150px) {
   .wrapper .main .main__vertical-line img {
-    max-width: 50px;
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main .main__vertical-line img {
+    max-width: 55px;
   }
 }
 .wrapper .main .main__vertical-line .main__line-1,
@@ -401,11 +442,52 @@ a:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  bottom: 455px;
+  bottom: 160px;
+}
+@media screen and (max-width: 1150px) {
+  .wrapper .main .main__vertical-line .main__line-1,
+  .wrapper .main .main__vertical-line .main__line-2,
+  .wrapper .main .main__vertical-line .main__line-3 {
+    max-width: 230px;
+  }
+}
+.wrapper .main .main__horizontal-line {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main .main__horizontal-line {
+    position: relative;
+    display: flex;
+    margin-top: 33px;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
+.wrapper .main .main__horizontal-line .main__hz-line-1,
+.wrapper .main .main__horizontal-line .main__hz-line-2,
+.wrapper .main .main__horizontal-line .main__hz-line-3 {
+  position: relative;
+  display: flex;
+  max-height: 660px;
+}
+.wrapper .main .main__horizontal-line .main__hz-line-1 img,
+.wrapper .main .main__horizontal-line .main__hz-line-2 img,
+.wrapper .main .main__horizontal-line .main__hz-line-3 img {
+  max-height: 49px;
+}
+.wrapper .main .main__horizontal-line .main__hz-line-1 {
+  left: 755px;
+}
+.wrapper .main .main__horizontal-line .main__hz-line-2 {
+  left: 462px;
+}
+.wrapper .main .main__horizontal-line .main__hz-line-3 {
+  left: 818px;
 }
 .wrapper .main .main__blog {
   width: 100%;
-  max-width: 531px;
+  max-width: 526px;
+  z-index: 2;
 }
 @media screen and (max-width: 1600px) {
   .wrapper .main .main__blog {
@@ -414,6 +496,11 @@ a:hover {
     min-width: 299px;
     font-size: 32px;
     line-height: 40px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main .main__blog {
+    margin-top: 33px;
   }
 }
 .wrapper .main .main__blog .main__blog-title {
@@ -431,6 +518,7 @@ a:hover {
   margin-top: 24px;
   padding: 24px 0 0 24px;
   border: 3px solid #478bf9;
+  background-color: #2e2839;
   border-radius: 100px;
 }
 @media screen and (max-width: 1600px) {
@@ -440,7 +528,7 @@ a:hover {
     border-radius: 50px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 900px) {
   .wrapper .main .main__blog .main__blog-container {
     margin-top: 18px;
   }
@@ -448,7 +536,7 @@ a:hover {
 .wrapper .main .main__blog .main__blog-container .main__blog-inner {
   position: relative;
   overflow: auto;
-  max-width: 467px;
+  max-width: 480px;
   display: flex;
   padding-right: 10px;
   flex-direction: column;
@@ -459,7 +547,7 @@ a:hover {
     max-width: 280px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 900px) {
   .wrapper .main .main__blog .main__blog-container .main__blog-inner {
     row-gap: 10px;
   }
@@ -478,13 +566,17 @@ a:hover {
   border-radius: 196px;
   background: #1e1231;
 }
+.wrapper .main .main__blog .main__blog-container .main__blog-inner .main__note-container:hover {
+  background: #478bf9;
+  transition: all 0.2s;
+}
 @media screen and (max-width: 1600px) {
   .wrapper .main .main__blog .main__blog-container .main__blog-inner .main__note-container {
     max-height: 112px;
     padding: 15px 35px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1600px) {
   .wrapper .main .main__blog .main__blog-container .main__blog-inner .main__note-container {
     border-radius: 40px;
   }
@@ -520,7 +612,7 @@ a:hover {
 .wrapper .main .main__blog .main__blog-inner::-webkit-scrollbar {
   width: 8px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1600px) {
   .wrapper .main .main__blog .main__blog-inner::-webkit-scrollbar {
     width: 4px;
   }
@@ -533,9 +625,10 @@ a:hover {
 }
 .wrapper .main .main__blog .main__blog-inner::-webkit-scrollbar-track {
   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background: linear-gradient(to bottom, #000000 11%, #4f465e 11%, #4f465e 71%, #000000 71%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 11%, #4f465e 11%, #4f465e 71%, rgba(0, 0, 0, 0) 71%);
 }
 .wrapper .footer {
+  z-index: 2;
   width: 100%;
   max-width: 100%;
   padding: 0 7.3%;
@@ -580,6 +673,12 @@ a:hover {
   -moz-column-gap: 40px;
        column-gap: 40px;
   list-style-type: none;
+}
+@media screen and (max-width: 1000px) {
+  .wrapper .footer .footer__nav-list {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
 }
 @media screen and (max-width: 900px) {
   .wrapper .footer .footer__nav-list {
@@ -645,13 +744,40 @@ a:hover {
 .main__line-1 {
   animation: move 5s linear backwards infinite;
 }
+@media screen and (max-width: 1150px) {
+  .main__line-1 {
+    animation-name: moveMiddleScreen;
+  }
+}
 
 .main__line-2 {
   animation: move 8s linear backwards infinite reverse;
 }
+@media screen and (max-width: 1150px) {
+  .main__line-2 {
+    animation-name: moveMiddleScreen;
+  }
+}
 
 .main__line-3 {
-  animation: move 15s linear backwards infinite;
+  animation: move 12s linear backwards infinite;
+}
+@media screen and (max-width: 1150px) {
+  .main__line-3 {
+    animation-name: moveMiddleScreen;
+  }
+}
+
+.main__hz-line-1 {
+  animation: moveHorizontal 5s linear backwards infinite;
+}
+
+.main__hz-line-2 {
+  animation: moveHorizontal_2 8s linear backwards infinite reverse;
+}
+
+.main__hz-line-3 {
+  animation: moveHorizontal_3 12s linear backwards infinite;
 }
 
 @keyframes move {
@@ -662,4 +788,47 @@ a:hover {
     bottom: -168px;
   }
 }
-/* @media queries*//*# sourceMappingURL=style.css.map */
+/* @media queries animation*/
+@keyframes moveMiddleScreen {
+  from {
+    bottom: 160px;
+  }
+  to {
+    bottom: -265px;
+  }
+}
+@keyframes moveHorizontal {
+  from {
+    left: 755px;
+  }
+  to {
+    left: 155px;
+  }
+}
+@keyframes moveHorizontal_2 {
+  from {
+    left: 462px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes moveHorizontal_3 {
+  from {
+    left: 818px;
+  }
+  to {
+    left: 236px;
+  }
+}
+/*Decoration*/
+.main__dot-light-oval {
+  position: absolute;
+}
+
+.main__dot-light-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}/*# sourceMappingURL=style.css.map */
