@@ -28,13 +28,12 @@ a {
   color: #fff;
 }
 
-a:hover {
+a:hover:not(.header__nav-burger-list a) {
   color: #478bf9;
   transition: color 0.4s linear;
 }
 
 .flex-container {
-  // position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +42,6 @@ a:hover {
 .wrapper {
   position: relative;
   margin: 0 auto;
-  // min-height: 100%;
   display: flex;
   flex-direction: column;
   background: black;
@@ -83,7 +81,7 @@ a:hover {
       left: -100%;
       z-index: 15;
       width: 100%;
-      height: 451px;
+      height: 544px;
       padding: 10px 10px 30px 10px;
       background: black;
       transition: all 0.6s;
@@ -102,10 +100,19 @@ a:hover {
           border: 2px solid #478bf9;
           border-radius: 28px;
 
+          &:hover a {
+            color: #478bf9;
+            transition: color 0.4s linear;
+          }
+
           a {
             display: block;
           }
         }
+      }
+
+      button:nth-child(2) {
+        background-color: #478bf9;
       }
 
       button {
@@ -118,10 +125,16 @@ a:hover {
         background: none;
         color: white;
         cursor: pointer;
-      }
+        text-transform: uppercase;
 
-      button:nth-child(2) {
-        background-color: #478bf9;
+        &:hover {
+          background-color: darkolivegreen;
+          transition: 0.4s all;
+        }
+
+        &:active {
+          background-color: rgb(138, 170, 81);
+        }
       }
     }
 
@@ -134,7 +147,7 @@ a:hover {
       width: $widthIconMobile;
       height: $heigthIconMurger;
       padding: 4px;
-      background: url(/assets/img/close.png) no-repeat center center;
+      background: url(./assets/img/close.png) no-repeat center center;
       cursor: pointer;
     }
   }
@@ -216,7 +229,7 @@ a:hover {
         -moz-appearance: none; /*Firefox и браузеры на движке Gecko*/
         -ms-appearance: none; /*Internet Explorer и старый Microsoft Edge 12–18*/
         appearance: none;
-        background: url('/assets/img/icon-planet.png') no-repeat 14px center;
+        background: url('./assets/img/icon-planet.png') no-repeat 14px center;
 
         option {
           color: white;
@@ -231,7 +244,7 @@ a:hover {
           width: 36px;
           height: 36px;
           padding: 0;
-          background: url('/assets/img/icon-planet.png') no-repeat 14px center;
+          background: url('./assets/img/icon-planet.png') no-repeat 14px center;
           background-size: 20px 20px;
           background-position: center center;
           color: transparent;
@@ -248,7 +261,6 @@ a:hover {
 
         &:active {
           background-color: rgb(138, 170, 81);
-          transition: 0.4s all;
         }
 
         @media screen and (max-width: 900px) {
@@ -267,7 +279,6 @@ a:hover {
 
         &:active {
           background-color: rgb(138, 170, 81);
-          transition: 0.4s all;
         }
 
         @media screen and (max-width: 900px) {
@@ -289,13 +300,13 @@ a:hover {
         left: 10px;
         width: 54px;
         height: 18px;
-        background: url(/assets/img/Logo_mb.png) no-repeat center center;
+        background: url(./assets/img/Logo_mb.png) no-repeat center center;
       }
       .header__burger-menu-icon {
         width: $widthIconMobile;
         height: $heigthIconMurger;
         padding: 4px;
-        background: url(/assets/img/burger_menu.png) no-repeat center center;
+        background: url(./assets/img/burger_menu.png) no-repeat center center;
         cursor: pointer;
       }
     }
@@ -324,6 +335,7 @@ a:hover {
     }
 
     .main__banner {
+      position: relative;
       z-index: 2;
       width: 100%;
       max-width: 669px;
@@ -401,7 +413,6 @@ a:hover {
 
       &:active {
         background-color: rgb(138, 170, 81);
-        transition: 0.4s all;
       }
 
       @media screen and (max-width: 1600px) {
@@ -500,9 +511,9 @@ a:hover {
     }
 
     .main__blog {
+      z-index: 2;
       width: 100%;
       max-width: 526px;
-      z-index: 2;
       // height: 659px;
       // display: flex;
       // flex-direction: column;
@@ -850,6 +861,34 @@ a:hover {
 
 .main__dot-light-oval {
   position: absolute;
+  top: -10%;
+  left: -25%;
+  z-index: 1;
+
+  img {
+    width: 100%;
+
+    @media screen and (max-width: 1600px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    top: 215px;
+    left: -208px;
+  }
+
+  @media screen and (max-width: 900px) {
+    top: -55px;
+    left: calc(50% - 345px);
+  }
+  @media screen and (max-width: 320px) {
+    top: 62px;
+    left: calc(50% - 233px);
+  }
 }
 
 .main__dot-light-circle {
